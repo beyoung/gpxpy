@@ -1914,6 +1914,7 @@ class GPX:
             mod_gpxfield.GPXComplexField('routes', classs=GPXRoute, tag='rte', is_list=True),
             mod_gpxfield.GPXComplexField('tracks', classs=GPXTrack, tag='trk', is_list=True),
             mod_gpxfield.GPXExtensionsField('extensions'),
+            mod_gpxfield.GPXExtensionsField('distance'),
     ]
 
     __slots__ = ('version', 'creator', 'name', 'description', 'author_name',
@@ -1921,7 +1922,7 @@ class GPX:
                  'bounds', 'waypoints', 'routes', 'tracks', 'author_link',
                  'author_link_text', 'author_link_type', 'copyright_author',
                  'copyright_year', 'copyright_license', 'link_type',
-                 'metadata_extensions', 'extensions')
+                 'metadata_extensions', 'extensions', 'distance')
 
     def __init__(self):
         self.version = None
@@ -1932,6 +1933,7 @@ class GPX:
         self.link_text = None
         self.link_type = None
         self.time = None
+        self.distance = None
         self.keywords = None
         self.bounds = None
         self.author_name = None

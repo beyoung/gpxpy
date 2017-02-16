@@ -13,9 +13,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from . import gpx
 
 
-def parse(xml_or_file, parser=None, version = None):
+def parse(xml_or_file, parser=None, version=None):
     """
     Parse xml (string) or file object. This is just an wrapper for
     GPXParser.parse() function.
