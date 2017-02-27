@@ -127,11 +127,21 @@ def calculate_max_speed(speeds_and_distances):
     return speeds[index]
 
 
-def calculate_uphill_downhill(elevations):
+def calculate_uphill_downhill(elevations, max_point=0):
+    """
+    计算gpx文件高程的累积爬升、下降
+    :param elevations:高程点
+    :param max_point: 最大点数
+    :return:
+    """
     if not elevations:
         return 0, 0
 
     size = len(elevations)
+    # sample elevation points
+    if max_point:
+        skip = size / max_point
+        elevations = elevations[::skip]
 
     def __filter(n):
         current_ele = elevations[n]
